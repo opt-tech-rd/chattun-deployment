@@ -1,0 +1,13 @@
+{
+  "name": "chattun-deployment",
+  "scripts": {
+    "build-front": "cd chattun/front && yarn && yarn build",
+    "predeploy-front": "yarn build-front",
+    "deploy-front": "firebase deploy --only hosting:chattun",
+    "deploy": "yarn deploy-front"
+  },
+  "dependencies": {
+    "firebase-tools": "^9.10.2"
+  },
+  "private": true
+}

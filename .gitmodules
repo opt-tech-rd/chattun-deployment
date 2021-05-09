@@ -1,0 +1,3 @@
+[submodule "chattun"]
+	path = chattun
+	url = https://github.com/sisisin/chattun.git
