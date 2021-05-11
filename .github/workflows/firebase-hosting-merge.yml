@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       SA_KEY: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_MISCS_RANDD }}
+      REACT_APP_BASE_URL: https://chattun-hackathon.herokuapp.com
     steps:
       - uses: actions/checkout@v2
       - run: echo $SA_KEY > ${HOME}/sa.json
