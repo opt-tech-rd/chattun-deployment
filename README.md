@@ -33,3 +33,17 @@ yarn firebase init:hosting
   - https://console.cloud.google.com/apis/api/firebasehosting.googleapis.com/overview
 - master を push して actions を動かす
 - 動いたら勝ち
+
+### heroku
+
+```sh
+heroku login
+heroku authorizations:create
+```
+
+setup GitHub secrets
+
+```
+HEROKU_API_KEY=***
+HEROKU_APP_NAME=***
+```
