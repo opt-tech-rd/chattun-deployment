@@ -10,14 +10,9 @@ jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     env:
-      SA_KEY: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_MISCS_RANDD }}
       REACT_APP_BASE_URL: https://chattun-hackathon.herokuapp.com
     steps:
       - uses: actions/checkout@v2
       - run: git submodule update --init
       # server deploy
       - run: cd chattun && git push https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/${{ secrets.HEROKU_APP_NAME }}.git master
-      # front deploy
-      - run: echo $SA_KEY > ${HOME}/sa.json
-      - run: echo "GOOGLE_APPLICATION_CREDENTIALS=$HOME/sa.json" >> $GITHUB_ENV
-      - run: yarn && yarn deploy
